@@ -11,9 +11,6 @@
  * USAGE: java SwampEscape <dimension> <dropInX> <dropInY>
  */
 
-import java.io.*;
-import java.util.*;
-import java.lang.Exception;
 
 public class SwampEscape
 {
@@ -34,13 +31,14 @@ public class SwampEscape
  
       // Create the swamp
       Swamp theSwamp = new Swamp(n);
+      theSwamp.createSwamp();
       
       // Display the swamp
-      theSwamp.displaySwamp();
+      System.out.println(theSwamp.swampToString().toString());
       
       // Find all possible paths out of the swamp
       StringBuilder path = new StringBuilder();
-      System.out.println("\nEscape Paths:");
+      System.out.println("\nFound Path:");
       theSwamp.getEscapePath(dropInX, dropInY, path);
     }
   }
@@ -75,7 +73,7 @@ public class SwampEscape
       }
       
       if(n < 0 || dropInX < 0 || dropInY < 0) {
-        // Check that all arguments are postive
+        // Check that all arguments are positive
         System.out.println("Arguments must be positive integers!");
         return_array[0] = RETURN_ERROR;
       }

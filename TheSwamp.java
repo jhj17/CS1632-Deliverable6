@@ -7,7 +7,7 @@
  */
 
 interface TheSwamp {
-  public int[][] createSwamp(int dimensions);
-  public void displaySwamp();
+  public void createSwamp();
+  public StringBuilder swampToString();
   public void getEscapePath(int currRow, int currCol, StringBuilder path);
 }
